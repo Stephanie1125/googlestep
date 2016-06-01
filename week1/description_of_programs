@@ -2,7 +2,7 @@
 The following is the description of the programs and practices I did for the first week homework:
 
 
-1. week1_hw.py
+1. week1_hw.py / week1_hw.cpp
 
 First week's homework for Google STEP:
 与えられてあ16文字からなるべく長い単語を出力するプログラムをつくろう！
@@ -13,7 +13,7 @@ Input: aehmnooqqrrstzzz
 Output: astronomer
 
 
-2. week1.practice.py
+2. week1.practice.py / week1.practice.cpp
 
 First week's practice for Google STEP:
 Given 16 letters and output all possible words with len(word) > 8.
