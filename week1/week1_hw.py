@@ -11,27 +11,22 @@ Output: astronomer
 """
 
 
-# build a dict using the path in the computer which key and value are same word
-# example: {'apple':'apple','happy':'happy'}
-def create_dict(path):
-    letter = {}
+# build a list using the path in the computer
+# example: [apple, happy]
+def create_lst(path):
+    letter = []
     f = open(path, "r")
     for line in f.readlines():
-        line = line.strip()
-        key = line
-        letter[key] = line
+        letter.append(line.strip())
     return letter
 
 
 # create a dictionary that can count the numbers of letters in the word
 # example: apple -> {a:1, p:2, l:1, e:1} is built
-def count(input_str):
+def count(string):
     d = {}
-    for c in input_str:
-        try:
-            d[c] += 1
-        except:
-            d[c] = 1
+    for c in string:
+        d[c] = d.get(c, 0) + 1
     return d
 
 
@@ -60,7 +55,7 @@ def anagram(input_str, dictionary):
 
 def main():
     word = input("please input:")
-    letters = create_dict("/usr/share/dict/words")
+    letters = create_lst("/usr/share/dict/words")
     answer = anagram(word, letters)
     print("longest word:", answer)
 
