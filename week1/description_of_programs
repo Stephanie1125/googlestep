@@ -2,7 +2,7 @@
 The following is the description of the programs and practices I did for the first week homework:
 
 
-1. first_week_hw.py
+1. week1_hw.py
 
 First week's homework for Google STEP:
 与えられてあ16文字からなるべく長い単語を出力するプログラムをつくろう！
@@ -13,7 +13,7 @@ Input: aehmnooqqrrstzzz
 Output: astronomer
 
 
-2. practice.py
+2. week1.practice.py
 
 First week's practice for Google STEP:
 Given 16 letters and output all possible words with len(word) > 8.
@@ -28,7 +28,7 @@ anorthose
 resonator
 
 
-3. practice_anagram.py
+3. week1_anagram.py
 
 This program is for practicing anagram:
 Find anagram for only one word (no space)
