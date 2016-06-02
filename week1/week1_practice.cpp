@@ -23,6 +23,10 @@ using namespace std;
 map<char,int> count(string s);
 
 
+// this c++ program is created based on the week1_practice.py
+// for more detail explanation of functions, please check the week1_practice.py
+
+
 vector<string> create_lst(string path){
     vector<string> dict;
     string word;
