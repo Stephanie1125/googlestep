@@ -24,7 +24,7 @@ def create_lst(path):
     return letter
 
 
-def counts(string):
+def count(string):
     d = {}
     for c in string:
         d[c] = d.get(c, 0) + 1
@@ -32,8 +32,8 @@ def counts(string):
 
 
 def valid(input_str, word):
-    input_lst = counts(input_str)
-    word_lst = counts(word)
+    input_lst = count(input_str)
+    word_lst = count(word)
     for key in word_lst:
         if key not in input_lst:
             return False
@@ -42,6 +42,8 @@ def valid(input_str, word):
     return True
 
 
+# create_lst, count, valid function are all the same as the functions in week1_hw.py
+# find all possible words and output words which len(word) > 8
 def main():
     input_str = input("please input a word:")
     letters = create_lst("/usr/share/dict/words")
