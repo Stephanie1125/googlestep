@@ -26,7 +26,7 @@ The following programs explain that different coding style will affect the progr
 
 ### * reference_matrix.py
 
-reference_matric.py is for checking the performace of the program running time and also it print out the sum of  all the values in matrix C.
+reference_matric.py is for checking the performace of the program running time and it also print out the sum of  all the values in matrix C.
 
 In the reference code, it assigns some values to matrix A and B follow the following rule:
 
@@ -34,7 +34,7 @@ In the reference code, it assigns some values to matrix A and B follow the follo
         B[i, j] = j * n + i (column number * length of column + row number)
 reference sample code : https://github.com/xharaken/step2015/blob/master/matrix.py
 
-and the performace of this program is shown in Fig.1
+and the performace of this program is shown in Fig.2
 
 **[ Fig.2: reference_matrix.py performance for N = 3, N = 4, N =5 : ]**
 
@@ -48,9 +48,9 @@ and the performace of this program is shown in Fig.1
 
 **matrix_without_np** : check performace without using python's package 
 
-Fig.2 shows that the program without using numpy is around three times faster than the one using numpy.
+Fig.3 shows that the program without using numpy is around three times faster than the one using numpy.
 
-Python is a high-level language and it supports many built-in functions and fundamental package that you can use in your program. However, when it comes to evaluate the performance, it is hard to tell how the performace is of your program if you use python's package. Fig.2 shows that the running time  without using numpy is faster than the one using numpy.
+Python is a high-level language and it supports many built-in functions and fundamental packages that you can use in your programs. However, when it comes to the evaluation of performance, it is hard to tell how the performace of your program behave if you use python's package. Fig.3 shows that the running time  without using numpy is faster than the one using numpy.
 
 **(the running time performance of the program without using numpy depends on how i wrote the multiplication function in function.py —> different way may cause different running time —> i think this question is really interesting: How to make my program execute faster ? )**
 
@@ -70,7 +70,7 @@ Python is a high-level language and it supports many built-in functions and fund
 
 **matrix_without_np_random** : check performace without using python's package, and generate the matrix using random numbers ( 0 < num< size of matrix: n*n)
 
-Fig.3 shows that program without numpy's running time is faster if the matrix is generate by some rules, however, if the matrix is generater randomly, it's hard to compare the running time through different programs becase matrix a & b are generate randomly, which means the result of matrix c will be different. In Fig.3, if the matrix values are generate randomly, the program matrix_with_np runs faster than the one without using numpy.
+Fig.4 shows that program without numpy's running time is faster if the matrix is generate by some rules, however, if the matrix is generater randomly, it's hard to compare the running time through different programs becase matrix a & b are generate randomly, which means the result of matrix c will be different. In Fig.4, if the matrix values are generate randomly, the program matrix_with_np runs faster than the one without using numpy.
 
 **[ Fig.4: performance comparison of the matrix generation method : ]**
 
