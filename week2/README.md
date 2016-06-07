@@ -6,11 +6,23 @@
 
 **行列積を求めるプログラムを書いて、行列のサイズNと実行時間の関係を調べてみよう仕様：プログラムの入力はサイズNN×Nの行列AとBを用意する（行列の中身は適当でOK）C=ABを計算する（この部分の実行時間を測定する）Nと実行時間の関係をグラフにする（計算量との関係は？）**
 
-**Write code to calculate C = A \* B, where A, B and C are matrices of size N * NMeasure the execution time of your code for various Ns, and plot the relationship between N and the execution time**
+**Write code to calculate C = A \* B, where A, B and C are matrices of size N * N. Measure the execution time of your code for various Ns, and plot the relationship between N and the execution time**
 
 --------------------------------------------------------------------------------------------------------------
 
 ## 2. programs performance 
+
+### * week_2__hw.py
+
+In this program, it outputs a graph that shows the relationship between N and the execution running time based on the homework description. We plot the N from 0 to 100, the result shown in Fig.1. (Program execution time is based on the code: matrix_with_np)
+
+The following programs explain that different coding style will affect the program execution time.
+
+**[ Fig.1: Relationship between N (from 0 to 100) and the execution running time(sec) : ]**
+
+![relationship between N and the execution time](relationship between N and the execution time.png)
+
+***
 
 ### * reference_matrix.py
 
@@ -24,9 +36,11 @@ reference sample code : https://github.com/xharaken/step2015/blob/master/matrix.
 
 and the performace of this program is shown in Fig.1
 
-****[ Fig.1: reference_matrix.py performance for N = 3, N = 4, N =5 : ]****
+**[ Fig.2: reference_matrix.py performance for N = 3, N = 4, N =5 : ]**
 
 ![reference matrix performace](reference matrix performace.png)
+
+***
 
 ### * matrix_with_np.py, matrix_without_np.py
 
@@ -40,9 +54,11 @@ Python is a high-level language and it supports many built-in functions and fund
 
 **(the running time performance of the program without using numpy depends on how i wrote the multiplication function in function.py —> different way may cause different running time —> i think this question is really interesting: How to make my program execute faster ? )**
 
-****[ Fig.2: performance comparison : ]****
+**[ Fig.3: performance comparison : ]**
 
 ![compare performance](compare performance.png)
+
+***
 
 ### * matrix_with_np_random.py, matrix_without_np_random.py
 
@@ -56,9 +72,11 @@ Python is a high-level language and it supports many built-in functions and fund
 
 Fig.3 shows that program without numpy's running time is faster if the matrix is generate by some rules, however, if the matrix is generater randomly, it's hard to compare the running time through different programs becase matrix a & b are generate randomly, which means the result of matrix c will be different. In Fig.3, if the matrix values are generate randomly, the program matrix_with_np runs faster than the one without using numpy.
 
-****[ Fig.3: performance comparison of the matrix generation method : ]****
+**[ Fig.4: performance comparison of the matrix generation method : ]**
 
 ![random_rule](random_rule.png)
+
+***
 
 ### * functions.py
 
