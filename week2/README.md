@@ -26,9 +26,7 @@ and the performace of this program is shown in Fig.1
 
 ****[ Fig.1: reference_matrix.py performance for N = 3, N = 4, N =5 : ]****
 
-![reference matrix performace](/Users/hsinwenliu/Desktop/reference matrix performace.png)
-
-
+![reference matrix performace](reference matrix performace.png)
 
 ### * matrix_with_np.py, matrix_without_np.py
 
@@ -44,9 +42,7 @@ Python is a high-level language and it supports many built-in functions and fund
 
 ****[ Fig.2: performance comparison : ]****
 
-![compare performance](/Users/hsinwenliu/Desktop/compare performance.png)
-
-
+![compare performance](compare performance.png)
 
 ### * matrix_with_np_random.py, matrix_without_np_random.py
 
@@ -62,9 +58,7 @@ Fig.3 shows that program without numpy's running time is faster if the matrix is
 
 ****[ Fig.3: performance comparison of the matrix generation method : ]****
 
-![random_rule](/Users/hsinwenliu/Desktop/random_rule.png)
-
-
+![random_rule](random_rule.png)
 
 ### * functions.py
 
