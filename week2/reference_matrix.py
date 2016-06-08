@@ -2,7 +2,7 @@ import numpy, sys, time
 
 # input number of N from keyboard
 if (len(sys.argv) != 2):
-    print "usage: python %s N" % sys.argv[0]
+    print("usage: python %s N" % sys.argv[0])
     quit()
 
 n = int(sys.argv[1])
@@ -25,7 +25,7 @@ end = time.time()
 
 print(c)
 
-print "time: %.6f sec" % (end - begin)
+print("time: %.6f sec" % (end - begin))
 
 # Print C for debugging. Comment out the print before measuring the execution time.
 
@@ -36,4 +36,4 @@ for i in range(n):
 
 # This should be 450 for N=3, 3680 for N=4, and 18250 for N=5.
 
-print "sum: %.6f" % total
+print("sum: %.6f" % total)
