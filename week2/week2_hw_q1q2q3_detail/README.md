@@ -89,15 +89,15 @@ Here is the two methods I have in my mind and I think that may satisfied the res
 
 (1) this is a First In Last Out algorithm. (Sadly, I only know about Stack(LIFO) and Queue(FIFO))
 
-the idea is that we add new item at the end of the cache list and then we pop the item at the begin of the list. In Python, we use ```list.append(F)``` and ```list.pop(0)```. I think this may used more memory space because you still have to save the D in the some of your memery space in your computer, just it is not inside your list. Here is the image of the first idea. after you do ```list.pop(0)``` it will return the removed element which is D in this case. 
+the idea is that we add new item at the end of the cache list and then we pop the item at the begin of the list. In Python, we use ```list.append(F)``` and ```list.pop(0)```. I think this may used more memory space because you still have to save the D in the some of your memery space in your computer, just it is not inside your list. Here is the image of the first idea. after you do ```list.pop(0)``` it will return the removed element which is D in this case.   
 
- ![idea of the cache program 1](/Users/hsinwenliu/Desktop/idea of the cache program 1.png)
+![idea of the cache program 1](idea of the cache program 1.png)
 
 (2)  this don't required more memory space because we replace the memory space that saved page D with the information of page F. But in this case it might cause some extra running time because we have to move the new saved page to the end of out list. This is the main problem of this idea, how to move the item in the most efficient way using programming language. In Python, the first step to replace the element, we may use ```list[0]='F'```. and for the moving the begin index to the end of the list, I am thinking that I can use ```list.remove(F)``` and ```list.append(F)```. We first remove the new saved webpage and then add it again to the list like the image below.
 
 
 
-![idea of the cache program 2](/Users/hsinwenliu/Desktop/idea of the cache program 2.png)
+![idea of the cache program 2](idea of the cache program 2.png)
 
 
 
@@ -109,7 +109,7 @@ Up here is the things I have in mind after the second lecture, hope I can reciev
 
 So the keypoint in this homework 3 is about designing a cache that achieves the operations with O(1) time. And here is the image I draw for the question.
 
-![idea of the cache program 3](/Users/hsinwenliu/Desktop/idea of the cache program 3.png)
+![idea of the cache program 3](idea of the cache program 3.png)
 
 (1) we first search if the <URL, webpage> is inside the dictionary. ( not really neccsary to move the item to the top because it is a dictionary not a list. In the graph I move the C webpage to the top for easier understanding that this moved to the newest access page)
 
@@ -135,13 +135,19 @@ How to deal with this is we have large amount of data and we refresh the table s
 
 Building a dictionary or table will make achievement to make the operations to be constant time O(1) but the unsolving problems remain. 
 
-![idea of the cache program 4](/Users/hsinwenliu/Desktop/idea of the cache program 4.png)
 
 
+![idea of the cache program 4](idea of the cache program 4.png)
+
+
+
+***
 
 **ここまで考えたけどわかんなかった …**
 
 **こんなに長々と書くつもりはなかったのですが、ごめんなさい (￣.￣)+**
+
+***
 
 
 
