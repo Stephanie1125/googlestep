@@ -52,11 +52,11 @@ Programs are all mainly written in python3. (may add some programs written in so
 
 **つまり、以下の操作がほぼO(1)で実現できるようなデータ構造を考えよ**
 
-**1. 与えられたがあるかないかを検索する**
+**1. 与えられた (URL, webpage) があるかないかを検索する**
 
 **2. もしない場合、キャッシュ内で一番古いを捨てて、かわりに与えられたを追加する**
 
-**Design a cache that achieves the following operations with O(1) When a pair of  is given, find if the given pair is contained in the cache or notIf the pair is not contained, insert the pair into the cache after evicting the least recently accessed pair**
+**Design a cache that achieves the following operations with O(1) When a pair of (URL, webpage) is given, find if the given pair is contained in the cache or not. If the pair is not contained, insert the pair into the cache after evicting the least recently accessed pair**
 
 ***
 
@@ -111,9 +111,9 @@ So the keypoint in this homework 3 is about designing a cache that achieves the 
 
 ![idea of the cache program 3](idea of the cache program 3.png)
 
-(1) we first search if the <URL, webpage> is inside the dictionary. ( not really neccsary to move the item to the top because it is a dictionary not a list. In the graph I move the C webpage to the top for easier understanding that this moved to the newest access page)
+(1) we first search if the (URL, webpage) is inside the dictionary. ( not really neccsary to move the item to the top because it is a dictionary not a list. In the graph I move the C webpage to the top for easier understanding that this moved to the newest access page)
 
-(2) However, we have to remove the oldest item in order to add new <URL, webpage> item. The problem is: **How do I know which one is the oldest if we don't really care about the order inside the dictionary?**
+(2) However, we have to remove the oldest item in order to add new (URL, webpage) item. The problem is: **How do I know which one is the oldest if we don't really care about the order inside the dictionary?**
 
 if it is the case that not adding new element inside the dictionary, we can use hash table to achieve the O(1) time for searching .
 
@@ -129,7 +129,7 @@ del dict["www.a.com"]
 
 But what if the case we first access page A and then we access new page F, the case will be like this:
 
-at the end instead of removing the <www.a.com, A>, which we think might be the oldest one, we have to remove the  <www.d.com, D>. 
+at the end instead of removing the (www.a.com, A), which we think might be the oldest one, we have to remove the  (www.d.com, D). 
 
 How to deal with this is we have large amount of data and we refresh the table several times in a day? 
 
