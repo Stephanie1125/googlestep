@@ -159,7 +159,7 @@ So here is the idea that might work for this question.
 
 The thing is that we need to keep track the order and time for each pair (URL, webpage). That's why we need a linked list because hash table itself does not have a concept of "order". 
 
-We need to combain the idea of dictionary with a double-linked list to make the time tracking possible. 
+We need to combine the idea of dictionary with a double-linked list to make the time tracking possible. 
 
 Here is the idea:
 
