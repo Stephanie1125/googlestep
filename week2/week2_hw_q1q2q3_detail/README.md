@@ -68,7 +68,7 @@ Pages browsing history (Webpage A, B, C, D, E….etc ):
 
 …., A, A, A, A, B, A, C, D, D, B, B, D, B, E
 
-​	The first thought that came into my mind is that I want to save the last three webpages. Because most of the time I use the searching engine to search for the information that I need to solve the problems I am currently facing to. For example, I had some trouble installing and setting up the numpy packege for Python3 because all the setup of numpy is already exist in the Python2.7 files. What do I do? 
+​	The first thought that came into my mind is that I want to save the last three webpages. Because most of the time I use the searching engine to search for the information that I need to use to solve the problems I am currently facing to. For example, I had some trouble installing and setting up the numpy packege for Python3 because all the setup of numpy is already existed in the Python2.7 files. What do I do? 
 
 ​	I Googled! I checked more than 10 webpages to solve my problems. Just like the case of webpage A, I opened it so many times in order to solve the problem I have in the past. But after I solved the problem, I don't need to access to the wegpage again because the problem is solved. And then when I look at the Pages browsing history, I noticed that the lasted and most frequently use pages for this user is Page D and Page B and he/she also open a new E page in this browser. As a result, if I am the designer of this cache program, I will save the **page D, B, E** for my user as I assume that he/she is facing some problems that need to access these three pages to solve it or I can say that he/she is interesting to some topic inside these pages. For me, if i want to make my program to be more convinient to the user, I might design another program to see and compare these pages' similarity (Are they topic-related?) If they are related in some field, I might recommend them some webpages in the same or similar topic that have high-page-view or high-page-rate to other users. But how to impliment this method? —> that is another thing that I have to think about it in detail afterward but it is not the topic for today.
 
@@ -129,7 +129,7 @@ del dict["www.a.com"]
 
 But what if the case we first access page A and then we access new page F, the case will be like this:
 
-at the end instead of removing the (www.a.com, A), which we think might be the oldest one, we have to remove the  (www.d.com, D). 
+at the end instead of removing the (www.a.com, A), which we think might be the oldest one, we have to remove the  (www.c.com, C). 
 
 How to deal with this is we have large amount of data and we refresh the table several times in a day? 
 
@@ -146,6 +146,36 @@ Building a dictionary or table will make achievement to make the operations to b
 **ここまで考えたけどわかんなかった …**
 
 **こんなに長々と書くつもりはなかったのですが、ごめんなさい (￣.￣)+**
+
+***
+
+
+
+And I got a Hint !!!
+
+the hint is : **double-linked list** :D
+
+So here is the idea that might work for this question.
+
+The thing is that we need to keep track the order and time for each pair (URL, webpage). That's why we need a linked list because hash table itself does not have a concept of "order". 
+
+We need to combain the idea of dictionary with a double-linked list to make the time tracking possible. 
+
+Here is the idea:
+
+**we can first build a dictionary with the pair (URL, webpage) as a key and for the value, we should save a pointer for the double-linked list (for example, i named it as head) and every single time I call the key pair inside the dictionary, I can access the pointer. And we will let the pointer point to the node(which is also the pair) in the linked list and then we can move the node to the head of linked list using the pointer! By doing this, we can keep tracking the time and move the latest (URL, webpag) to the head of the double-linked list and then we can also delete the last node in the linked list.**
+
+
+
+And then it should work for this question and achieves the following operations with O(1).
+
+The point that we need a dictionary is because it usually takes O(n) for a linked list to search elements, we need the dictionary to access the correct (URL, webpage) in constant time so that's why we need a dictionary here. Also, the reason that we need a linked list is explained up there :)
+
+
+
+Thank you very much for reading such a long paragraph. 
+
+
 
 ***
 
