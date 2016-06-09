@@ -12,9 +12,9 @@
 
 ## 2. programs performance 
 
-### * week_2__hw.py
+### [* week_2__hw.py](https://github.com/Stephanie1125/googlestep/blob/master/week2/week2_hw.py)
 
-In this program, it outputs a graph that shows the relationship between N and the execution running time based on the homework description. We plot the N from 0 to 100, the result shown in Fig.1. (Program execution time is based on the code: matrix_with_np)
+In this program, it outputs a graph that shows the relationship between N and the execution running time based on the homework description. We plot the N from 0 to 100, the result shown in Fig.1. (Program execution time is based on the code:  [**matrix_with_np.py**](https://github.com/Stephanie1125/googlestep/blob/master/week2/matrix_with_np.py) )
 
 The following programs explain that different coding style will affect the program execution time.
 
@@ -26,7 +26,7 @@ The following programs explain that different coding style will affect the progr
 
 ### * reference_matrix.py
 
-reference_matric.py is for checking the performace of the program running time and it also print out the sum of  all the values in matrix C.
+[**reference_matric.py**](https://github.com/Stephanie1125/googlestep/blob/master/week2/reference_matrix.py) is for checking the performace of the program running time and it also print out the sum of  all the values in matrix C.
 
 In the reference code, it assigns some values to matrix A and B follow the following rule:
 
@@ -44,9 +44,9 @@ and the performace of this program is shown in Fig.2
 
 ### * matrix_with_np.py, matrix_without_np.py
 
-**matrix_with_np.py** : check performance using python's package, numpy
+ [**matrix_with_np.py**](https://github.com/Stephanie1125/googlestep/blob/master/week2/matrix_with_np.py) : check performance using python's package, numpy
 
-**matrix_without_np** : check performace without using python's package 
+ [**matrix_without_np.py**](https://github.com/Stephanie1125/googlestep/blob/master/week2/matrix_without_np.py) : check performace without using python's package 
 
 Fig.3 shows that the program without using numpy is around three times faster than the one using numpy.
 
@@ -62,13 +62,13 @@ Python is a high-level language and it supports many built-in functions and fund
 
 ### * matrix_with_np_random.py, matrix_without_np_random.py
 
-**matrix_with_np.py** : check performance using python's package, numpy, with same matrix generation rule in reference_matrix.py 
+[**matrix_with_np.py**](https://github.com/Stephanie1125/googlestep/blob/master/week2/matrix_with_np.py) : check performance using python's package, numpy, with same matrix generation rule in reference_matrix.py 
 
-**matrix_without_np** : check performace without using python's package, with same matrix generation rule in reference_matrix.py 
+ [**matrix_without_np.py**](https://github.com/Stephanie1125/googlestep/blob/master/week2/matrix_without_np.py) : check performace without using python's package, with same matrix generation rule in reference_matrix.py 
 
-**matrix_with_np_random.py** : check performance using python's package, numpy, and generate the matrix using random numbers ( 0 < num< size of matrix: n*n)
+[**matrix_with_np_random.py**](https://github.com/Stephanie1125/googlestep/blob/master/week2/matrix_with_np_random.py) : check performance using python's package, numpy, and generate the matrix using random numbers ( 0 < num< size of matrix: n*n)
 
-**matrix_without_np_random** : check performace without using python's package, and generate the matrix using random numbers ( 0 < num< size of matrix: n*n)
+[**matrix_without_np_random**](https://github.com/Stephanie1125/googlestep/blob/master/week2/matrix_without_np.py): check performace without using python's package, and generate the matrix using random numbers ( 0 < num< size of matrix: n*n)
 
 Fig.4 shows that program without numpy's running time is faster if the matrix is generate by some rules, however, if the matrix is generater randomly, it's hard to compare the running time through different programs becase matrix a & b are generate randomly, which means the result of matrix c will be different. In Fig.4, if the matrix values are generate randomly, the program matrix_with_np runs faster than the one without using numpy.
 
@@ -80,9 +80,9 @@ Fig.4 shows that program without numpy's running time is faster if the matrix is
 
 ### * functions.py
 
-this program called in matrix_without_np.py and matrix_without_np_random.py
+this program called in  [**matrix_without_np.py**](https://github.com/Stephanie1125/googlestep/blob/master/week2/matrix_without_np.py)  and [**matrix_without_np_random**](https://github.com/Stephanie1125/googlestep/blob/master/week2/matrix_without_np.py)
 
-functions.py contains two functions:
+[**functions.py**](https://github.com/Stephanie1125/googlestep/blob/master/week2/functions.py) contains two functions:
 
 **multiplicaiton** : calcuate the multiplication of two matrix (not neccessary to be two N*N matrix)
 
