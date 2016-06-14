@@ -61,7 +61,7 @@ So here comes the debug part and i wrote the second program.
 
 ***
 
-## 2. [week3_hw_fixbug.py](https://github.com/Stephanie1125/googlestep/blob/master/week3/week3_hw1_fixbug.py)
+## 2. [week3_hw_fixbug.py](https://github.com/Stephanie1125/googlestep/blob/master/week3/week3_hw1_fixedbug.py)
 
 So the reason that bugs appear is that I didn't think about the priority and the performance of calculating numbers very clear. So I decided to think it over again.
 
