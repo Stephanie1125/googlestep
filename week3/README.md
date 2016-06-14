@@ -2,7 +2,7 @@
 
 ***
 
-## 1. [week3_hw_bug.py](https://github.com/Stephanie1125/googlestep)
+## 1. [week3_hw_bug.py](https://github.com/Stephanie1125/googlestep/blob/master/week3/week3_hw1_bug.py)
 
 **電卓のプログラムで「✕」「/」に対応せよ例： 3.0 + 4 × 2 − 1 / 5細かい仕様は適宜定義してよい**
 
@@ -61,7 +61,7 @@ So here comes the debug part and i wrote the second program.
 
 ***
 
-## 2. [week3_hw_fixbug.py](https://github.com/Stephanie1125/googlestep)
+## 2. [week3_hw_fixbug.py](https://github.com/Stephanie1125/googlestep/blob/master/week3/week3_hw1_fixbug.py)
 
 So the reason that bugs appear is that I didn't think about the priority and the performance of calculating numbers very clear. So I decided to think it over again.
 
@@ -80,6 +80,12 @@ for the example,
 **"1.5x2"** ⇒ we should take 1.5 as one number ⇒ the result should be 3.0
 
 **"1.5x1.5"** ⇒  we should take 1.5 as one number ⇒ the result should be 2.25
+
+As a result, we cannot put the multiplication and division program inside the **readNumber(line, index)** because it will affect the decimals and also the priority of the「x」and「/」.
+
+We should write it as the way we write the Pulse and Minus function. 
+
+### **And the bugs all fixed.｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡**
 
 
 
