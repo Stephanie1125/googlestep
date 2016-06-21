@@ -2,9 +2,11 @@
 
 ***
 
-## 1. [week3_hw_bug.py](https://github.com/Stephanie1125/googlestep/blob/master/week3/week3_hw1_bug.py)
+### **宿題その1**
 
-**電卓のプログラムで「✕」「/」に対応せよ例： 3.0 + 4 × 2 − 1 / 5細かい仕様は適宜定義してよい**
+***
+
+**電卓のプログラムで「*」「/」に対応せよ例： 3.0 + 4 * 2 − 1 / 5細かい仕様は適宜定義してよい**
 
 **Write code to do calculations of numbers, including numbers addition, subtraction, multiplication, and division. Also, this program should be able to calculate decimals, such as 0.5, 5.8, 6.5…etc**
 
@@ -16,58 +18,9 @@
 
 ***
 
-According to the hint, we do the calculation with the following step:
+## 1. [week3_hw1.py](https://github.com/Stephanie1125/googlestep/blob/master/week3/week3_hw1.py) 
 
-1. Calculate the part with「x」and「/」
-
-    ```Num1``` + ```Num2 × Num3``` − ```Num4 / Num5``` ⇒ ```Num1``` + ```Num6``` − ```Num7``` 
-
-   where, ```Num6 = Num2 × Num3``` and ```Num7 = Num4 / Num5```
-
-2. Calculate the part with「+」and「-」
-
-   ```Num1``` + ```Num6``` − ```Num7``` 
-
-As a result, I wrote the following codes inside the **readNumber(line, index)** function:
-
-```
-if index < len(line) and line[index] == 'x':
-    number = float(line[index-1]) * float(line[index+1])
-    index += 2
-if index < len(line) and line[index] == '/':
-    number = float(line[index-1]) / float(line[index+1])
-    index += 2
-```
-
-By doing this, I can save the result of  ```Num2 × Num3``` as ```Num6``` in the list  ```tokens``` , which plays an important role in the **evaluate(tokens)** function.
-
-This program works fine with all the inputs which can do the calculation of「x」and「/」part first and then do the「+」and「−」part afterward.
-
-**However, there are some bugs in this program.**
-
-In some situation, this program is not working. 
-
-For example,
-
-if we enter **"4x5/4"** ⇒ the result will be "1.25" because the program only do the **"5/4"**
-
-if we enter **"1.5x2"** ⇒ the result will be **"10"** because the program only do the **"5x2"**
-
-if we enter **"1.5x1.5"** ⇒ the result will be **Invalid character found: .**
-
-### இдஇ Oh no, SO MANY BUGS  இдஇ （泣きそう…） ###
-
-So here comes the debug part and i wrote the second program.
-
-***
-
-## 2. [week3_hw_fixbug.py](https://github.com/Stephanie1125/googlestep/blob/master/week3/week3_hw1_fixedbug.py)
-
-So the reason that bugs appear is that I didn't think about the priority and the performance of calculating numbers very clear. So I decided to think it over again.
-
-### **もう一度考え直してみますね =͟͟͞͞( •̀д•́)( •̀д•́)**
-
-so for the calculation of numbers, here is the things and roles:
+ For the calculation of numbers, here is the things and roles:
 
 1. the decimals should be one number. ⇒ 3.6, 5.8 …. etc
 2. if we met 「x」and「/」, we should calculate it first. 「x」and「/」have the same priority.
@@ -81,15 +34,30 @@ for the example,
 
 **"1.5x1.5"** ⇒  we should take 1.5 as one number ⇒ the result should be 2.25
 
-As a result, we cannot put the multiplication and division program inside the **readNumber(line, index)** because it will affect the decimals and also the priority of the「x」and「/」.
+***
 
-We should write it as the way we write the Pulse and Minus function. 
+### **宿題その2（チャレンジしたい人向け）**
 
-### **And the bugs all fixed.｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡**
+***
 
+**さらに括弧に対応せよ Add parentheses: ()**
 
+**例： (3.0 + 4 × (2 − 1)) ÷ 5**
 
+***
 
+## 2. [week3_hw2.py](https://github.com/Stephanie1125/googlestep/blob/master/week3/week3_hw2.py)
+
+If we add parentheses as input in our program.
+
+for the calculation of numbers, here is the roles:
+
+1. the decimals should be one number. ⇒ 3.6, 5.8 …. etc
+2. if we met () , we should calculate it first, parentheses hold higher priority than  the「x」and「/」
+3. 「x」and「/」have the same priority.
+4. we should calculate「+」and「−」, in the end.
+
+In this program, we use the evaluate function from [week3_hw1.py](https://github.com/Stephanie1125/googlestep/blob/master/week3/week3_hw1.py) and change the function name to calculate function. This function do the calculation part in the input and also it will first calculate the part inside parentheses. In the evaluate function, we call the calculate function and then in this function, we use a stack to make sure we calculate the part inside parentheses first.
 
 
 
