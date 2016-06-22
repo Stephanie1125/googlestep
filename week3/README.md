@@ -79,11 +79,11 @@ in the tokens list:
 
 and we also record the index number of '(' and ')' because we want to calculate the () part first.
 
-```calculate_part = stack[rpar_index + 1:lpar_index]``` 
+``calculate_part = stack[rpar_index + 1:lpar_index]``
 
 —> [{type:num, num: 2},{type: plus}, {type:num, num: 1}] —> (2+1)
 
-```calculate_part.reverse()``` 
+``calculate_part.reverse()`` 
 
 —> [{type:num, num: 1},{type: plus}, {type:num, num: 2}] —> reverse it back (1+2) —> get 3
 
