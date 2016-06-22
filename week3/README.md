@@ -59,6 +59,44 @@ for the calculation of numbers, here is the roles:
 
 In this program, we use the evaluate function from [week3_hw1.py](https://github.com/Stephanie1125/googlestep/blob/master/week3/week3_hw1.py) and change the function name to calculate function. This function do the calculation part in the input and also it will first calculate the part inside parentheses. In the evaluate function, we call the calculate function and then in this function, we use a stack to make sure we calculate the part inside parentheses first.
 
+The stack deal with the parentheses and I first pop() the item from the list "tokens" 
+as a result the order in the stack will be reversed( because we pop the items from the "tokens")
+So if we want to do the calculation, we should take the reverse order to make sure we are doing the right calculation.(like 3/5 is not equal 5/3 so the order is very important!)
+
+Also the reason I use the stack list is because I want to calculate the part with parentheses first and then put it back to the tokens list. The following is an example to explain how this program working. 
+
+***
+
+**if I input : (1+2)/3**
+
+in the tokens list: 
+**tokens= [{type: lpar}, {type:num, num: 1},{type: plus}, {type:num, num: 2}, {type: rpar}, {type: div}, {type: num, num: 3}]**
+
+--> we pop item to stack 
+
+**tokens = [] empty**
+**stack= [{type: num, num: 3}, {type: div}, {type: rpar}, {type:num, num: 2},{type: plus}, {type:num, num: 1},{type: lpar}]**
+
+and we also record the index number of '(' and ')' because we want to calculate the () part first.
+
+```calculate_part = stack[rpar_index + 1:lpar_index]``` 
+
+—> [{type:num, num: 2},{type: plus}, {type:num, num: 1}] —> (2+1)
+
+```calculate_part.reverse()``` 
+
+—> [{type:num, num: 1},{type: plus}, {type:num, num: 2}] —> reverse it back (1+2) —> get 3
+
+ And after we calculate the part with parentheses, we put it back into the tokens list. (get rid of parentheses)
+We also put the remain part inside stack back to tokens list. 
+as a result,
+
+**tokens list: [{type:num, num: 3} {type: div}, {type: num, num: 3}] ---> 3/3 = 1**
+
+and then we can call the calculate function and get the final result :)
+
+***
+
 
 
 
