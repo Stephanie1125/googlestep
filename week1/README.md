@@ -1,6 +1,6 @@
 # Description of the programs 
 
-##* [week1___hw.py](https://github.com/Stephanie1125/googlestep/blob/master/week1/week1_hw.py) / [week1_hw.cpp](https://github.com/Stephanie1125/googlestep/blob/master/week1/week1_hw.cpp)  <br />
+##* [week1_hw.py](https://github.com/Stephanie1125/googlestep/blob/master/week1/week1_hw.py) / [week1_hw.cpp](https://github.com/Stephanie1125/googlestep/blob/master/week1/week1_hw.cpp)  <br />
 
  First week's homework for Google STEP:<br />
  与えられてあ16文字からなるべく長い単語を出力するプログラムをつくろう！<br />
