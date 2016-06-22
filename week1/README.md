@@ -1,8 +1,6 @@
-# Description of the programs and practices
+# Description of the programs 
 
----------------------------------------
-
-##* week1_hw.py / week1_hw.cpp  <br />
+##* [week1___hw.py](https://github.com/Stephanie1125/googlestep/blob/master/week1/week1_hw.py) / [week1_hw.cpp](https://github.com/Stephanie1125/googlestep/blob/master/week1/week1_hw.cpp)  <br />
 
  First week's homework for Google STEP:<br />
  与えられてあ16文字からなるべく長い単語を出力するプログラムをつくろう！<br />
@@ -14,7 +12,7 @@
 
 ---------------------------------------
 
-##* week1.practice.py / week1.practice.cpp <br />
+##* [week1.practice.py](https://github.com/Stephanie1125/googlestep/blob/master/week1/week1_practice.py) / [week1.practice.cpp](https://github.com/Stephanie1125/googlestep/blob/master/week1/week1_practice.cpp) <br />
 
  First week's practice for Google STEP:<br />
  Given 16 letters and output all possible words with len(word) > 8.<br />
@@ -30,7 +28,7 @@
 
 ---------------------------------------
 
-##* week1_anagram.py <br />
+##* [week1_anagram.py](https://github.com/Stephanie1125/googlestep/blob/master/week1/week1_anagram.py) <br />
 
  This program is for practicing anagram:<br />
  Find anagram for only one word (no space)<br />
