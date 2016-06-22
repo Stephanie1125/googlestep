@@ -95,10 +95,6 @@ as a result,
 
 and then we can call the calculate function and get the final result :)
 
-***
-
-
-
 
 
 
