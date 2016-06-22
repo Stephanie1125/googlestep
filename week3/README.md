@@ -69,12 +69,12 @@ Also the reason I use the stack list is because I want to calculate the part wit
 
 **if I input : (1+2)/3**
 
-in the tokens list: 
+in the tokens list: </br>
 **tokens= [{type: lpar}, {type:num, num: 1},{type: plus}, {type:num, num: 2}, {type: rpar}, {type: div}, {type: num, num: 3}]**
 
 --> we pop item to stack 
 
-**tokens = [] empty**
+**tokens = [] empty** </br>
 **stack= [{type: num, num: 3}, {type: div}, {type: rpar}, {type:num, num: 2},{type: plus}, {type:num, num: 1},{type: lpar}]**
 
 and we also record the index number of '(' and ')' because we want to calculate the () part first.
