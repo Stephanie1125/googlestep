@@ -1,0 +1,8 @@
+application: liuweek5hw1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: week5_hw1.app

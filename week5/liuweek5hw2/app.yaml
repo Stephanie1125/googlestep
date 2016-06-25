@@ -1,0 +1,14 @@
+application: liuweek5hw2
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: week5_hw2.app
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
