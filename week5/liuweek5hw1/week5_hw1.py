@@ -6,8 +6,8 @@ class HW1(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write('<title>STEP2016_week5_hw1_Liu</title>')
         self.response.write('<body><h1>Please input two strings: </h1>')
-        self.response.write('<form><b style="color:#F256AF">input1:</b><input type=text name=a><br>')
-        self.response.write('<b style="color:#14B0EE">input2:</b><input type=text name=b><br>')
+        self.response.write('<form><b style="color:#F256AF">input1: </b><input type=text name=a><br>')
+        self.response.write('<b style="color:#14B0EE">input2: </b><input type=text name=b><br>')
         self.response.write('<input type=submit></form><hr>')
 
         len_a = len(self.request.get("a"))
