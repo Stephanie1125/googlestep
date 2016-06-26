@@ -6,7 +6,9 @@
 
 **implement [パタトクカシーー](http://fantasy-transit.appspot.com/pata)**
 
-Here is the result:
+Please visit the following URL and enjoy the application:
+
+http://liuweek5hw1.appspot.com/
 
  ![hw1_result](hw1_result.png)
 
