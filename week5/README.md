@@ -18,6 +18,10 @@ http://liuweek5hw1.appspot.com/
 
 **implement [train guidance](http://fantasy-transit.appspot.com)**
 
+Please visit the following URL and enjoy the application:
+
+http://liuweek5hw2.appspot.com
+
 ***
 
 
