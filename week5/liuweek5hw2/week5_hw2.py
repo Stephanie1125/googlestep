@@ -161,6 +161,9 @@ class GUIDE(webapp2.RequestHandler):
             self.print_path(station, end)
 
     def transfer_line(self, start, end):
+        """
+        return a list of lines that recommended to be taken
+        """
         curr_lines = self.get_line(start)  # initial start line (set)
         count = 0  # 乗り換え times
         line_path = []
@@ -183,7 +186,7 @@ class GUIDE(webapp2.RequestHandler):
             line_to_take.append(end_line_to_take)
         line_to_take.reverse()
         if count != 0:
-            self.response.write('Recommand to take ')
+            self.response.write('<b style="color:#14B0EE"> Recommand to take </b>')
             for line in line_to_take:
                 self.response.write(' >> %s' % line)
             self.response.write('<b style="color:#F256AF"> (乗換 %d 回) </b><br><hr>' % count)
