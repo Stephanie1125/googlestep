@@ -58,6 +58,7 @@ class GUIDE(webapp2.RequestHandler):
             if dictionary['Name'] == line:
                 return dictionary
 
+
     def get_index(self, target, list):
         """
         return the index where the target is in a list
@@ -136,14 +137,11 @@ class GUIDE(webapp2.RequestHandler):
         end = self.request.get("to")
         start_line_str = '/'.join([str(item) for item in self.get_line(start)])
         end_line_str = '/'.join([str(item) for item in self.get_line(end)])
-        self.response.write('From %s[%s] to %s[%s]' % (start, start_line_str, end, end_line_str))
+        self.response.write('<b style="color:#14B0EE"> From  </b> %s[%s]' % (start, start_line_str))
+        self.response.write('<b style="color:#14B0EE"> to </b> %s[%s]' % (end, end_line_str))
         # calculate path
         self.print_path_sameline(start, end)
         self.transfer_station(end, start)
-
-        # for station in station_to_trans:
-        #     self.print_path(start, station)
-        #     self.print_path(station, end)
 
     def transfer_station(self, end, start):
         line_to_take = self.transfer_line(start, end)
@@ -152,10 +150,15 @@ class GUIDE(webapp2.RequestHandler):
             trans_station = self.intersection_station(line_to_take[line_index - 1], line_to_take[line_index])
             station_to_trans += trans_station
         if len(station_to_trans) != 0:
-            self.response.write('Transfer Station(s): ')
+            self.response.write('<b style="color:#14B0EE">Transfer Station(s): </b>')
             for station in station_to_trans:
-                    self.response.write(' %s (乗換)' % station)
+                    self.response.write(' %s <b style="color:#F256AF">(乗換)</b>' % station)
             self.response.write('<hr>')
+
+        for station in station_to_trans:
+            self.print_path(start, station)
+            self.response.write('>> <b style="color:#F256AF"> (乗換) </b>')
+            self.print_path(station, end)
 
     def transfer_line(self, start, end):
         curr_lines = self.get_line(start)  # initial start line (set)
@@ -170,17 +173,20 @@ class GUIDE(webapp2.RequestHandler):
             count += 1
         end_line_set = self.get_line(end)
         line_to_take = []
-        end_line_to_take = ''.join([str(item) for item in (end_line_set & curr_lines)])  # initial
+        end_line_to_take = ''
+        for item in (end_line_set & curr_lines):
+            end_line_to_take = str(item) # initial
         line_to_take.append(end_line_to_take)
         for path_set in line_path[::-1]:
-            end_line_to_take = ''.join(str(item) for item in (path_set & self.intersection_line(end_line_to_take)))
+            for item in (path_set & self.intersection_line(end_line_to_take)):
+                end_line_to_take = str(item)
             line_to_take.append(end_line_to_take)
         line_to_take.reverse()
         if count != 0:
             self.response.write('Recommand to take ')
             for line in line_to_take:
                 self.response.write(' >> %s' % line)
-            self.response.write('(乗換 %d 回)<br><hr>' % count)
+            self.response.write('<b style="color:#F256AF"> (乗換 %d 回) </b><br><hr>' % count)
         return line_to_take
 
     def print_path_sameline(self, start, end):
@@ -189,12 +195,13 @@ class GUIDE(webapp2.RequestHandler):
         """
         intersection_line = (self.get_line(start) & self.get_line(end))
         now = datetime.now()
-        self.response.write('<br> Starting at: %s' % start)  # utc time + 9 hours = JP time
-        self.response.write('@ %s-%s-%s ' % (now.year, now.month, now.day))
+        self.response.write('<br> <b style="color:#14B0EE"> Starting at: </b> %s' % start)
+        self.response.write('@ %s-%s-%s ' % (now.year, now.month, now.day)) # utc time + 9 hours = JP time
         self.response.write(' %s:%s:%s JST <br><hr>' % (now.hour + 9, now.minute, now.second))
         if len(intersection_line) != 0:
             intersection_line_str = ''.join([str(item) for item in intersection_line])
-            self.response.write('Recommand to take %s (乗換なし) <br>' % intersection_line_str)
+            self.response.write('<b style="color:#14B0EE"> Recommand to take </b> %s ' % intersection_line_str)
+            self.response.write('<b style="color:#F256AF"> (乗換なし)</b> <br>' )
         self.print_path(start, end)
 
     def print_path(self, start, end):
@@ -206,13 +213,13 @@ class GUIDE(webapp2.RequestHandler):
                 path = self.get_dict(line)['Stations'][start_index:end_index + 1]
                 for station in path:
                     self.response.write('>> %s ' % station)
-                self.response.write('<hr>')
+                # self.response.write('<hr>')
             else:
                 path = self.get_dict(line)['Stations'][end_index:start_index + 1]
                 path.reverse()
                 for station in path:
                     self.response.write('>> %s ' % station)
-                self.response.write('<hr>')
+                # self.response.write('<hr>')
 
 
 app = webapp2.WSGIApplication([
