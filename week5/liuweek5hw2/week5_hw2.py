@@ -16,11 +16,16 @@ JINJA_ENVIRONMENT = jinja2.Environment(
         extensions=['jinja2.ext.autoescape'],
         autoescape=True)
 
+url = 'http://test-mojo.appspot.com/net?format=json'
+output = json.load(urllib.urlopen(url))
+
+
 class HW2(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         template = JINJA_ENVIRONMENT.get_template('train.html')
         self.response.out.write(template.render())
+
 
 class GUIDE(webapp2.RequestHandler):
     def get_line(self, target):
@@ -33,8 +38,6 @@ class GUIDE(webapp2.RequestHandler):
         return: set([東横線/目黒線/多摩川線])
         """
         station_line = set([])
-        url = 'http://test-mojo.appspot.com/net?format=json'
-        output = json.load(urllib.urlopen(url))
         for dictionary in output:
             for station in dictionary['Stations']:  # build station and line's set
                 if station == target:
@@ -50,8 +53,6 @@ class GUIDE(webapp2.RequestHandler):
         line = '山手線'
         return: {"Name":"山手線","Stations":["品川","大崎","五反田","目黒","恵比寿","渋谷","原宿"...]}
         """
-        url = 'http://test-mojo.appspot.com/net?format=json'
-        output = json.load(urllib.urlopen(url))
         for dictionary in output:
             if dictionary['Name'] == line:
                 return dictionary
@@ -142,11 +143,12 @@ class GUIDE(webapp2.RequestHandler):
 
     def transfer_station(self, end, start):
         line_to_take = self.transfer_line(start, end)  #list
+        path = []
         station_to_trans = {}
         for line_index in xrange(1, len(line_to_take)):
             trans_station = self.intersection_station(line_to_take[line_index - 1], line_to_take[line_index])
             station_to_trans[(line_to_take[line_index - 1],line_to_take[line_index])] = trans_station
-
+            path.append(trans_station[0])
         if len(station_to_trans) != 0:
             # find where to transfer
             self.response.write('<b style="color:#14B0EE">Transfer Station(s): </b>')
@@ -155,23 +157,22 @@ class GUIDE(webapp2.RequestHandler):
                 station_str = '/'.join([str(item) for item in station_list])
                 self.response.write(' %s: %s <b style="color:#F256AF">(乗換)</b>' % (line_str, station_str))
             self.response.write('<hr>')
+            # print path
+            self.response.write('<b style="color:#14B0EE">You can take: </b>')
+            self.response.write('<b style="color:#F256AF"> >> %s </b>' % start)
+            for station in path:
+                self.response.write('<b style="color:#F256AF"> >> %s (乗換) </b>' % station)
+            self.response.write('<b style="color:#F256AF"> >> %s </b><br><hr>' % end)
 
-            #print path
+            path.insert(0, start)
+            path.append(end)
 
-            # for station_list in station_to_trans.values():
-            #     for station in station_list:
-            #         self.print_path(start, station)
-            #         break
-            #     self.print_path(station, end)
-            # for line_tuple in station_to_trans:
-            #     for line in line_to_take:  # line is a tuple, station is a list
-            #         if line in line_tuple:
-            #             for station_lst in station_to_trans.itervalues():
-            #                 for station in station_lst:
-            #                     self.print_path()
-                # self.print_path(start, station)
-                # self.response.write('>> <b style="color:#F256AF"> (乗換) </b>')
-                # self.print_path(station, end)
+            self.response.write('<b style="color:#14B0EE">Detail: </b>')
+
+            for index in xrange(1, len(path)):
+                s, t = path[index-1], path[index]
+                self.print_path(s, t)
+                self.response.write('<b style="color:#F256AF">(乗換)</b>')
 
     def transfer_line(self, start, end):
         """
@@ -229,13 +230,11 @@ class GUIDE(webapp2.RequestHandler):
                 path = self.get_dict(line)['Stations'][start_index:end_index + 1]
                 for station in path:
                     self.response.write('>> %s ' % station)
-                # self.response.write('<hr>')
             else:
                 path = self.get_dict(line)['Stations'][end_index:start_index + 1]
                 path.reverse()
                 for station in path:
                     self.response.write('>> %s ' % station)
-                # self.response.write('<hr>')
 
 
 app = webapp2.WSGIApplication([
