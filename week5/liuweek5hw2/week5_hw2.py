@@ -16,13 +16,11 @@ JINJA_ENVIRONMENT = jinja2.Environment(
         extensions=['jinja2.ext.autoescape'],
         autoescape=True)
 
-
 class HW2(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         template = JINJA_ENVIRONMENT.get_template('train.html')
         self.response.out.write(template.render())
-
 
 class GUIDE(webapp2.RequestHandler):
     def get_line(self, target):
@@ -57,7 +55,6 @@ class GUIDE(webapp2.RequestHandler):
         for dictionary in output:
             if dictionary['Name'] == line:
                 return dictionary
-
 
     def get_index(self, target, list):
         """
@@ -144,21 +141,37 @@ class GUIDE(webapp2.RequestHandler):
         self.transfer_station(end, start)
 
     def transfer_station(self, end, start):
-        line_to_take = self.transfer_line(start, end)
-        station_to_trans = []
+        line_to_take = self.transfer_line(start, end)  #list
+        station_to_trans = {}
         for line_index in xrange(1, len(line_to_take)):
             trans_station = self.intersection_station(line_to_take[line_index - 1], line_to_take[line_index])
-            station_to_trans += trans_station
+            station_to_trans[(line_to_take[line_index - 1],line_to_take[line_index])] = trans_station
+
         if len(station_to_trans) != 0:
+            # find where to transfer
             self.response.write('<b style="color:#14B0EE">Transfer Station(s): </b>')
-            for station in station_to_trans:
-                    self.response.write(' %s <b style="color:#F256AF">(乗換)</b>' % station)
+            for line_tuple, station_list in station_to_trans.iteritems():  # line is a tuple, station is a list
+                line_str = '>>'.join([str(item) for item in line_tuple])
+                station_str = '/'.join([str(item) for item in station_list])
+                self.response.write(' %s: %s <b style="color:#F256AF">(乗換)</b>' % (line_str, station_str))
             self.response.write('<hr>')
 
-        for station in station_to_trans:
-            self.print_path(start, station)
-            self.response.write('>> <b style="color:#F256AF"> (乗換) </b>')
-            self.print_path(station, end)
+            #print path
+
+            # for station_list in station_to_trans.values():
+            #     for station in station_list:
+            #         self.print_path(start, station)
+            #         break
+            #     self.print_path(station, end)
+            # for line_tuple in station_to_trans:
+            #     for line in line_to_take:  # line is a tuple, station is a list
+            #         if line in line_tuple:
+            #             for station_lst in station_to_trans.itervalues():
+            #                 for station in station_lst:
+            #                     self.print_path()
+                # self.print_path(start, station)
+                # self.response.write('>> <b style="color:#F256AF"> (乗換) </b>')
+                # self.print_path(station, end)
 
     def transfer_line(self, start, end):
         """
