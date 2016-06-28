@@ -172,7 +172,8 @@ class GUIDE(webapp2.RequestHandler):
             for index in xrange(1, len(path)):
                 s, t = path[index-1], path[index]
                 self.print_path(s, t)
-                self.response.write('<b style="color:#F256AF">(乗換)</b>')
+                if t != end:
+                    self.response.write('<b style="color:#F256AF">(乗換)</b>')
 
     def transfer_line(self, start, end):
         """
