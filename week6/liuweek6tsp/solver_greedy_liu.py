@@ -13,13 +13,8 @@ def read_input(filename):
         return cities
 
 
-def format_solution(solution):
-    return 'index\n' + '\n'.join(map(str, solution))
-
-
-def print_solution(solution):
-    print(format_solution(solution))
-
+def print_format_solution(solution):
+    print ('index\n' + '\n'.join(map(str, solution)))
 
 
 def distance(city1, city2):
@@ -78,4 +73,4 @@ def solve(cities):
 if __name__ == '__main__':
     assert len(sys.argv) > 1
     solution = solve(read_input(sys.argv[1]))
-    print_solution(solution)
+    print_format_solution(solution)
