@@ -2,19 +2,7 @@
 
 import sys
 import math
-
-
-def read_input(filename):
-    with open(filename) as f:
-        cities = []
-        for line in f.readlines()[1:]:  # Ignore the first line.
-            xy = line.split(',')
-            cities.append((float(xy[0]), float(xy[1])))
-        return cities
-
-
-def print_format_solution(solution):
-    print ('index\n' + '\n'.join(map(str, solution)))
+from functions import *
 
 
 def distance(city1, city2):
@@ -60,7 +48,7 @@ def solve(cities):
             unvisited_cities.remove(next_city)
             solution.append(next_city)
             current_city = next_city
-        distance_result += distance(cities[solution[-1]],cities[solution[0]])
+        distance_result += distance(cities[solution[-1]], cities[solution[0]])
         for i in range(1, len(solution)):
             d += distance(cities[solution[i-1]], cities[solution[i]])
         d += distance(cities[solution[-1]],cities[solution[0]])
