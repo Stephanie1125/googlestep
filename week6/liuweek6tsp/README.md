@@ -27,9 +27,11 @@
 
 3. **[solver_google_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_google_opt.py)**
 
-   Using google API
+   Using google API (google or_tools)
 
    Library Import Error occurred —> Not sure if this is working or not
+
+   Just want to check the result obtained from google TSP but this program cannot run due to library import problems.
 
 4. **[solver_opt_2.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_opt_2.py)**
 
@@ -72,20 +74,4 @@
    |   **128**    | **11253.668891** |
    |   **512**    | **21749.244644** |
    |   **2048**   | **42801.432451** |
-
-7. **[solver_genatic.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_genatic.py)**
-
-   apply genetic algorithm ( result not fixed —> based on the random-generated path)
-
-   | tsp_size (N) |    distance     |
-   | :----------: | :-------------: |
-   |      5       | **3291.621721** |
-   |      8       | **3778.715416** |
-   |      16      |  5227.40233803  |
-   |      64      |  16909.6559979  |
-   |     128      |  47576.0855911  |
-   |     512      |   not working   |
-   |     2048     |   not working   |
-
-   ​
 
