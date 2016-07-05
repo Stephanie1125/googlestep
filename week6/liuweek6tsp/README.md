@@ -70,8 +70,36 @@
    |    **5**     | **3291.621721**  |
    |    **8**     | **3778.715416**  |
    |    **16**    | **4494.417962**  |
-   |    **64**    | **9445.796954**  |
+   |    **64**    |   9445.796954    |
    |   **128**    | **11253.668891** |
-   |   **512**    | **21749.244644** |
-   |   **2048**   | **42801.432451** |
+   |     512      |   21749.244644   |
+   |     2048     |   42801.432451   |
+
+7. **[solver_mix_opt2.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_opt2.py)**
+
+   use the path obtained from **[solver_greedy_liu.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_greedy_liu.py)** as initial input path and then apply both opt_2 and or_opt algorithms on the initial path
+
+   | tsp_size (N) |     distance     |
+   | :----------: | :--------------: |
+   |    **5**     | **3291.621721**  |
+   |    **8**     | **3778.715416**  |
+   |    **16**    | **4494.417962**  |
+   |    **64**    | **8403.532157**  |
+   |     128      |   11271.988369   |
+   |   **512**    | **20917.757077** |
+   |     2048     | runtime too long |
+
+8. **[solver_mix_random.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_random.py)**
+
+   use random initail path and then apply both opt_2 and or_opt algorithms on the initial path.
+
+   —> different time will get different result (random)
+
+   —> rewrite the result at solution_6.csv if we get better result
+
+   | tsp_size (N) |     distance     |
+   | :----------: | :--------------: |
+   |   **2048**   | **42378.641570** |
+
+   ​
 
