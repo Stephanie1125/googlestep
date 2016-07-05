@@ -19,12 +19,12 @@ def distance(city1, city2):
 def min_distance(cities):
     track_min = {}
     all_possible_perm = all_permutation(len(cities))
-    for l in all_possible_perm:
+    for path in all_possible_perm:
         d = 0
-        for i in range(1, len(l)):
-            d += distance(cities[l[i-1]], cities[l[i]])
-        d += distance(cities[l[-1]], cities[l[0]])
-        track_min[d] = l
+        for i in range(1, len(path)):
+            d += distance(cities[path[i-1]], cities[path[i]])
+        d += distance(cities[path[-1]], cities[path[0]])
+        track_min[d] = path
     min_d = min(track_min)
     return min_d, track_min[min_d]
 
@@ -39,4 +39,4 @@ if __name__ == '__main__':
     xy_list = read_input(sys.argv[1])
     d = min_distance(xy_list)
     print("distance: %f" % d[0])
-    print_format_solution(d[1])
+    # print_format_solution(d[1])
