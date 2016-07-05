@@ -1,7 +1,9 @@
 """
-Slove this question follow this:
+Solve this question follow this:
 https://developers.google.com/optimization/routing/tsp/tsp#solving-tsps-with-or-tools
 """
+
+
 import math
 import sys
 from functions import *
