@@ -2,14 +2,12 @@
 Solve this question follow this:
 https://developers.google.com/optimization/routing/tsp/tsp#solving-tsps-with-or-tools
 """
-
-import math
-import sys
-from functions import *
-
 from google.apputils import app
 from ortools.constraint_solver import pywrapcp
 from ortools.constraint_solver import routing_enums_pb2
+
+from solver_opt_2 import *
+from solver_or_opt import *
 
 
 def distance(city1, city2):
@@ -17,14 +15,6 @@ def distance(city1, city2):
 
 
 def create_data(cities):
-    """
-    cities 0~4:
-    [0.0, 1139.468611035281, 679.7227326641358, 829.251122595876, 740.0208580992705]
-    [1139.468611035281, 0.0, 463.63085520669887, 512.7321993957855, 1091.1135139211965]
-    [679.7227326641358, 463.63085520669887, 0.0, 394.51229505232465, 745.9866861116151]
-    [829.251122595876, 512.7321993957855, 394.51229505232465, 0.0, 1124.5662308439055]
-    [740.0208580992705, 1091.1135139211965, 745.9866861116151, 1124.5662308439055, 0.0]
-    """
     tsp_size = len(cities)
     dist = [[0] * tsp_size for i in range(tsp_size)]
     for i in range(tsp_size):
@@ -42,6 +32,14 @@ class CreateDistanceCallback(object):
 
 
 def main(_):  # '_' is a valid variable name(I think it is used in the library)
+    path = get_path(_)
+    new_path1 = opt_2(path)
+    new_path2 = or_opt(new_path1)
+    d = path_distance(new_path2)
+    print(d)
+
+
+def get_path(_):
     cities = read_input(sys.argv[1])
     city_index = [x for x in range(len(cities))]
     tsp_size = len(cities)
@@ -54,7 +52,6 @@ def main(_):  # '_' is a valid variable name(I think it is used in the library)
         routing.SetArcCostEvaluatorOfAllVehicles(dist_callback)
         assignment = routing.SolveWithParameters(search_parameters)
         if assignment:
-            # print("Total distance: " + str(assignment.ObjectiveValue()))
             route_number = 0
             index = routing.Start(route_number)
             route = ''
@@ -62,7 +59,8 @@ def main(_):  # '_' is a valid variable name(I think it is used in the library)
                 route += str(city_index[routing.IndexToNode(index)]) + '\n'
                 index = assignment.Value(routing.NextVar(index))
             route += str(city_index[routing.IndexToNode(index)])
-            print("index\n" + route)
+            path = map(int, route.split('\n'))
+            return path
         else:
             print('No solution found.')
     else:

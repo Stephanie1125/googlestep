@@ -26,5 +26,5 @@ if __name__ == '__main__':
     solution = solve()
     print("distance: %f" % solution[0])
     if solution[0] < current_score:   # overwrite the solution if obtain better score
-        with open('solution_liu_6.csv', 'w') as f:
+        with open('solution_yours_6.csv', 'w') as f:
             f.write(format_solution(solution[1]) + '\n')
