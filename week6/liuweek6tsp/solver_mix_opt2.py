@@ -13,5 +13,5 @@ def solve():
 if __name__ == '__main__':
     assert len(sys.argv) > 1
     solution = solve()
-    print("distance: %f" % solution[0])
+    # print("distance: %f" % solution[0])
     print_format_solution(solution[1])

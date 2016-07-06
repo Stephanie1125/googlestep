@@ -36,7 +36,9 @@ def main(_):  # '_' is a valid variable name(I think it is used in the library)
     new_path1 = opt_2(path)
     new_path2 = or_opt(new_path1)
     d = path_distance(new_path2)
-    print(d)
+    print('index')
+    for i in new_path2:
+        print(i)
 
 
 def get_path(_):

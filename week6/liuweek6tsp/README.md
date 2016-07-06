@@ -8,8 +8,8 @@
 
    | tsp_size (N) | distance |
    | :----------: | :------: |
-   |      5       |   3292   |
-   |      8       |   3779   |
+   |      5       | 3291.62  |
+   |      8       | 3778.72  |
 
 2. **[solver_greedy_liu.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_greedy_liu.py)**
 
@@ -17,90 +17,89 @@
 
    | tsp_size (N) | distance |
    | :----------: | :------: |
-   |      5       |   3418   |
-   |      8       |   3832   |
-   |      16      |   5844   |
-   |      64      |  10188   |
-   |     128      |  12465   |
-   |     512      |  25404   |
-   |     2048     |  44509   |
+   |      5       | 3418.10  |
+   |      8       | 3832.29  |
+   |      16      | 5843.91  |
+   |      64      | 10187.55 |
+   |     128      | 12465.05 |
+   |     512      | 25404.24 |
+   |     2048     | 44508.50 |
 
 3. **[solver_google_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_google_opt.py)**
 
-   Using google API (google or_tools)
+   using google API (google or_tools)
 
-   Just want to check the result obtained from google TSP 
+   want to check the result obtained from google TSP 
 
-   (And google or_tools method almost beat everything —> cheated : P)
+   cheated : P —> just for fun :)
 
-   Just for fun :)
-
-   | tsp_size (N) | distance  |
-   | :----------: | :-------: |
-   |    **5**     | **3289**  |
-   |    **8**     | **3775**  |
-   |    **16**    | **4486**  |
-   |      64      |   8587    |
-   |   **128**    | **11016** |
-   |   **512**    | **20612** |
-   |   **2048**   | **40193** |
+   | tsp_size (N) |     distance     |
+   | :----------: | :--------------: |
+   |    **5**     |   **3291.62**    |
+   |    **8**     |   **3778.72**    |
+   |    **16**    |   **4494.42**    |
+   |      64      |     8617.57      |
+   |     128      |     11080.74     |
+   |     512      |     20867.96     |
+   |     2048     |     41207.31     |
+   |  4,194,304   | runtime too long |
 
 4. **[solver_opt_2.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_opt_2.py)**
 
    apply opt_2 algorithm
 
-   | tsp_size (N) | distance |
-   | :----------: | :------: |
-   |      5       |   3292   |
-   |      8       |   3832   |
-   |      16      |   4670   |
-   |      64      |   9543   |
-   |     128      |  11922   |
-   |     512      |  22722   |
-   |     2048     |  44509   |
+   | tsp_size (N) |  distance   |
+   | :----------: | :---------: |
+   |    **5**     | **3291.62** |
+   |    **8**     | **3832.29** |
+   |      16      |   4670.27   |
+   |      64      |   9543.28   |
+   |     128      |  11922.39   |
+   |     512      |  22722.04   |
+   |     2048     |  44508.50   |
 
 5. **[solver_or_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_or_opt.py)**
 
    apply or_opt algorithm
 
-   | tsp_size (N) | distance |
-   | :----------: | :------: |
-   |      5       |   3292   |
-   |      8       |   3779   |
-   |      16      |   4494   |
-   |      64      |   9735   |
-   |     128      |  14303   |
-   |     512      |  27627   |
-   |     2048     |  56983   |
+   | tsp_size (N) |  distance   |
+   | :----------: | :---------: |
+   |    **5**     | **3291.62** |
+   |    **8**     | **3778.72** |
+   |    **16**    | **4494.42** |
+   |      64      |   9735.26   |
+   |     128      |  14302.96   |
+   |     512      |  27626.93   |
+   |     2048     |  56982.68   |
 
 6. **[solver_mix_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_opt.py)**
 
    apply both opt_2 and or_opt algorithms
 
-   | tsp_size (N) | distance |
-   | :----------: | :------: |
-   |      5       |   3292   |
-   |      8       |   3779   |
-   |      16      |   4494   |
-   |      64      |   9446   |
-   |     128      |  11254   |
-   |     512      |  21749   |
-   |     2048     |  42801   |
+   | tsp_size (N) |  distance   |
+   | :----------: | :---------: |
+   |    **5**     | **3291.62** |
+   |    **8**     | **3778.72** |
+   |    **16**    | **4494.42** |
+   |      64      |   9445.80   |
+   |     128      |  11253.67   |
+   |     512      |  21749.24   |
+   |     2048     |  42801.43   |
 
 7. **[solver_mix_opt2.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_opt2.py)**
 
-   use the path obtained from **[solver_greedy_liu.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_greedy_liu.py)** as initial input path and then apply both opt_2 and or_opt algorithms on the initial path.
+   use the path obtained from **[solver_greedy_liu.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_greedy_liu.py)** as initial input path and then apply both opt_2 and or_opt algorithms on the initial path
 
-   Yeah :) this method beat the **[solver_google_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_google_opt.py)** for input_3.csv !!!
+   Yeah :)  this method beat the **[solver_google_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_google_opt.py)** for input_3.csv !!!
 
    | tsp_size (N) |     distance     |
    | :----------: | :--------------: |
-   |      5       |       3292       |
-   |      8       |       3779       |
-   |      16      |       4494       |
-   |    **64**    |     **8404**     |
-   |     128      |      11272       |
-   |     512      |      20918       |
+   |    **5**     |   **3291.62**    |
+   |    **8**     |   **3778.72**    |
+   |    **16**    |   **4494.42**    |
+   |    **64**    |   **8403.53**    |
+   |     128      |     11271.99     |
+   |     512      |     20917.76     |
    |     2048     | runtime too long |
 
 8. **[solver_mix_random.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_random.py)**
@@ -113,7 +112,44 @@
 
    | tsp_size (N) | distance |
    | :----------: | :------: |
-   |     2048     |  42379   |
+   |     2048     | 42378.64 |
 
-   ​
 
+9. **[solver_mix_g_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_g_opt.py)**
+
+   use the path obtained from **google or_tools** as initial input path and then apply both opt_2 and or_opt algorithms on the initial path
+
+   | tsp_size (N) |   distance   |
+   | :----------: | :----------: |
+   |    **5**     | **3291.62**  |
+   |    **8**     | **3778.72**  |
+   |    **16**    | **4494.42**  |
+   |      64      |   8617.57    |
+   |   **128**    | **11080.22** |
+   |   **512**    | **20867.06** |
+   |   **2048**   | **41189.85** |
+
+
+***
+
+## Note
+
+For using the visualizer to check the performace:  ![visualizer_view](visualizer_view.png)
+
+First, you should download this repository and change to the right directory by running the following command in your Terminal.
+
+```
+$ git clone git@github.com:Stephanie1125/googlestep.git
+$ cd googlestep/week6/liuweek6tsp/
+```
+
+By running the following command, you can check the performances of different programs.
+
+```
+For Python 3: 
+$ ./nocache_server.py 
+For Python 2:
+$ ./nocache_server.py2.py 
+```
+
+[**visualizer**](https://github.com/Stephanie1125/googlestep/tree/master/week6/liuweek6tsp/visualizer), [**nocache_server.py**](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/nocache_server.py), and [**nocache_server.py2.py**](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/nocache_server.py2.py) 's copyright are belongs to **[google-step-tsp](https://github.com/Stephanie1125/google-step-tsp)**. 
