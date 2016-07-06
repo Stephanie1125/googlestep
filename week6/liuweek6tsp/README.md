@@ -115,7 +115,7 @@
    |     2048     | 42378.64 |
 
 
-9. **[solver_mix_g_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_g_opt.py)**
+1. **[solver_mix_g_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_g_opt.py)**
 
    use the path obtained from **google or_tools** as initial input path and then apply both opt_2 and or_opt algorithms on the initial path
 
@@ -136,6 +136,12 @@
 
 For using the visualizer to check the performace:  ![visualizer_view](visualizer_view.png)
 
+1. You can visit this website:
+
+   https://stephanie1125.github.io/liuweek6tsp/visualizer/
+
+2. You can run the program on the local browser:
+
 First, you should download this repository and change to the right directory by running the following command in your Terminal.
 
 ```
@@ -143,7 +149,7 @@ $ git clone git@github.com:Stephanie1125/googlestep.git
 $ cd googlestep/week6/liuweek6tsp/
 ```
 
-By running the following command, you can check the performances of different programs.
+By running the following command, you can check the performances of different programs on the  http://localhost:8000/visualizer/.
 
 ```
 For Python 3: 
