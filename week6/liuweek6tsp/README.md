@@ -8,8 +8,8 @@
 
    | tsp_size (N) | distance |
    | :----------: | :------: |
-   |    **5**     |   3292   |
-   |    **8**     |   3779   |
+   |      5       |   3292   |
+   |      8       |   3779   |
 
 2. **[solver_greedy_liu.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_greedy_liu.py)**
 
