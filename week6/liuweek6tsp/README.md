@@ -48,7 +48,7 @@
    $ time python solver_google_opt.py input_6.csv
    real	3m51.150s
    user	3m47.930s
-   sys		0m1.206s
+   sys	0m1.206s
    ```
 
 4. **[solver_opt_2.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_opt_2.py)**
@@ -69,7 +69,7 @@
    $ time python solver_opt_2.py input_6.csv
    real	0m16.238s
    user	0m15.609s
-   sys		0m0.267s
+   sys	0m0.267s
    ```
 
 5. **[solver_or_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_or_opt.py)**
@@ -90,7 +90,7 @@
    $ time python solver_or_opt.py input_6.csv 
    real	1m27.640s
    user	1m22.436s
-   sys		0m0.586s
+   sys	0m0.586s
    ```
 
 6. **[solver_mix_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_opt.py)**
@@ -140,7 +140,7 @@
    distance: 42657.939456
    real	0m38.233s
    user	0m37.513s
-   sys		0m0.350s
+   sys	0m0.350s
    ```
 
 9. **[solver_mix_g_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_g_opt.py)**
