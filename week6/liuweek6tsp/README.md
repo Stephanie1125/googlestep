@@ -44,6 +44,13 @@
    |     2048     |     41207.31     |
    |  4,194,304   | runtime too long |
 
+   ```
+   $ time python solver_google_opt.py input_6.csv
+   real	3m51.150s
+   user	3m47.930s
+   sys		0m1.206s
+   ```
+
 4. **[solver_opt_2.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_opt_2.py)**
 
    apply opt_2 algorithm
@@ -58,6 +65,13 @@
    |     512      |  22722.04   |
    |     2048     |  44508.50   |
 
+   ```
+   $ time python solver_opt_2.py input_6.csv
+   real	0m16.238s
+   user	0m15.609s
+   sys		0m0.267s
+   ```
+
 5. **[solver_or_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_or_opt.py)**
 
    apply or_opt algorithm
@@ -71,6 +85,13 @@
    |     128      |  14302.96   |
    |     512      |  27626.93   |
    |     2048     |  56982.68   |
+
+   ```
+   $ time python solver_or_opt.py input_6.csv 
+   real	1m27.640s
+   user	1m22.436s
+   sys		0m0.586s
+   ```
 
 6. **[solver_mix_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_opt.py)**
 
@@ -112,12 +133,20 @@
 
    | tsp_size (N) | distance |
    | :----------: | :------: |
-   |     2048     | 42378.64 |
+   |     2048     | 42657.94 |
+
+   ```
+   $ time python solver_mix_random.py input_6.csv
+   distance: 42657.939456
+   real	0m38.233s
+   user	0m37.513s
+   sys		0m0.350s
+   ```
+
+9. **[solver_mix_g_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_g_opt.py)**
 
 
-1. **[solver_mix_g_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_g_opt.py)**
-
-   use the path obtained from **google or_tools** as initial input path and then apply both opt_2 and or_opt algorithms on the initial path
+1. use the path obtained from **google or_tools** as initial input path and then apply both opt_2 and or_opt algorithms on the initial path
 
    | tsp_size (N) |   distance   |
    | :----------: | :----------: |
