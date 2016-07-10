@@ -145,19 +145,18 @@
 
 9. **[solver_mix_g_opt.py](https://github.com/Stephanie1125/googlestep/blob/master/week6/liuweek6tsp/solver_mix_g_opt.py)**
 
+   use the path obtained from **google or_tools** as initial input path and then apply both opt_2 and or_opt algorithms on the initial path
 
-1. use the path obtained from **google or_tools** as initial input path and then apply both opt_2 and or_opt algorithms on the initial path
 
-   | tsp_size (N) |   distance   |
-   | :----------: | :----------: |
-   |    **5**     | **3291.62**  |
-   |    **8**     | **3778.72**  |
-   |    **16**    | **4494.42**  |
-   |      64      |   8617.57    |
-   |   **128**    | **11080.22** |
-   |   **512**    | **20867.06** |
-   |   **2048**   | **41189.85** |
-
+| tsp_size (N) |   distance   |
+| :----------: | :----------: |
+|    **5**     | **3291.62**  |
+|    **8**     | **3778.72**  |
+|    **16**    | **4494.42**  |
+|      64      |   8617.57    |
+|   **128**    | **11080.22** |
+|   **512**    | **20867.06** |
+|   **2048**   | **41189.85** |
 
 ***
 
